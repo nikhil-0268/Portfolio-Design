@@ -1,0 +1,737 @@
+.lucky-project-picker {
+  --lpp-gold: #e7c68a;
+  --lpp-cream: #f2e9d5;
+  --lpp-ink: #15271e;
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  width: 100%;
+  min-width: 0;
+  padding: 44px 20px 54px;
+  background: #020b08;
+  color: var(--lpp-cream);
+  font:
+    400 16px/1.5 Georgia,
+    'Times New Roman',
+    serif;
+  text-align: center;
+  color-scheme: dark;
+}
+.lucky-project-picker,
+.lucky-project-picker *,
+.lucky-project-picker *::before,
+.lucky-project-picker *::after {
+  box-sizing: border-box;
+}
+.lucky-project-picker [hidden] {
+  display: none !important;
+}
+.lucky-project-picker button,
+.lucky-project-picker a {
+  -webkit-tap-highlight-color: transparent;
+  touch-action: manipulation;
+}
+.lucky-project-picker button {
+  font: inherit;
+  cursor: pointer;
+  color: inherit;
+}
+.lucky-project-picker button:disabled {
+  cursor: wait;
+  opacity: 0.6;
+}
+.lucky-project-picker button:focus-visible,
+.lucky-project-picker a:focus-visible {
+  outline: 3px solid #ffdf98;
+  outline-offset: 5px;
+}
+.lucky-project-picker a {
+  color: inherit;
+}
+.lucky-project-picker h2,
+.lucky-project-picker h3,
+.lucky-project-picker p,
+.lucky-project-picker figure {
+  margin: 0;
+}
+.lucky-project-picker img {
+  display: block;
+  max-width: 100%;
+  object-fit: contain;
+}
+.lucky-project-picker .lpp-curtains {
+  position: absolute;
+  inset: 0;
+  z-index: -3;
+  background:
+    radial-gradient(ellipse at 50% 29%, #a7803926 0%, transparent 39%),
+    linear-gradient(
+      92deg,
+      #000e 0%,
+      #08251a66 9%,
+      #000a 16%,
+      #1953384a 24%,
+      #000b 30%,
+      #0c342833 42%,
+      #000a 48%,
+      #23523e3d 57%,
+      #000b 64%,
+      #123e2b55 74%,
+      #000c 81%,
+      #15453250 89%,
+      #000f 100%
+    ),
+    linear-gradient(178deg, #09271b, #061810 60%, #010604);
+  filter: blur(2px);
+  transform: scale(1.015);
+}
+.lucky-project-picker .lpp-curtains::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse at center, transparent 20%, #000b 95%),
+    linear-gradient(0deg, #010705, transparent 45%);
+}
+.lucky-project-picker .lpp-grain {
+  position: absolute;
+  inset: 0;
+  z-index: 10;
+  pointer-events: none;
+  opacity: 0.055;
+  background-image: var(--lpp-grain);
+  mix-blend-mode: screen;
+}
+.lucky-project-picker .lpp-topline {
+  max-width: 1030px;
+  margin: 0 auto 26px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+  font:
+    10px/1.4 Arial,
+    sans-serif;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: #c1bca9;
+}
+.lucky-project-picker .lpp-brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.lucky-project-picker .lpp-badge {
+  width: 38px;
+  height: 38px;
+  object-fit: contain;
+  opacity: 0.86;
+}
+.lucky-project-picker .lpp-sound {
+  background: transparent;
+  border: 1px solid #c3b58a42;
+  padding: 10px 12px;
+  min-height: 44px;
+  border-radius: 30px;
+  font:
+    10px/1 Arial,
+    sans-serif;
+  letter-spacing: 0.08em;
+}
+.lucky-project-picker .lpp-header {
+  position: relative;
+  z-index: 2;
+  max-width: 720px;
+  margin: 0;
+}
+.lucky-project-picker .lpp-kicker {
+  font:
+    10px/1.5 Arial,
+    sans-serif;
+  letter-spacing: 0.27em;
+  text-transform: uppercase;
+  color: var(--lpp-gold);
+}
+.lucky-project-picker .lpp-title {
+  font:
+    400 clamp(40px, 7vw, 77px)/0.98 Georgia,
+    serif;
+  letter-spacing: -0.055em;
+  margin: 14px 0 18px;
+  text-wrap: balance;
+  font-size: clamp(40px, 5vw, 68px);
+}
+.lucky-project-picker .lpp-title em {
+  color: var(--lpp-gold);
+  font-weight: 400;
+}
+.lucky-project-picker .lpp-subtitle {
+  font:
+    13px/1.6 Arial,
+    sans-serif;
+  max-width: 380px;
+  color: #c1c4b4;
+  margin: 0;
+  text-wrap: initial;
+}
+.lucky-project-picker .lpp-stage {
+  position: relative;
+  width: 100%;
+  margin: 0;
+  padding-bottom: 0;
+}
+.lucky-project-picker .lpp-stage::before {
+  content: '';
+  position: absolute;
+  top: 9%;
+  left: -26%;
+  width: 152%;
+  height: 65%;
+  z-index: -1;
+  background: radial-gradient(ellipse, #eac17b21, transparent 65%);
+  pointer-events: none;
+}
+.lucky-project-picker .lpp-stage::after {
+  content: '';
+  position: absolute;
+  left: 8%;
+  width: 84%;
+  height: 80px;
+  z-index: -1;
+  filter: blur(16px);
+  background: radial-gradient(ellipse, #bb201c38, #000d 65%, transparent 72%);
+  pointer-events: none;
+  bottom: 0;
+}
+.lucky-project-picker .lpp-machine {
+  position: relative;
+  width: 100%;
+  aspect-ratio: var(--lpp-ratio, 4/5);
+  isolation: isolate;
+}
+.lucky-project-picker .lpp-machine-photo {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: fill;
+  z-index: 0;
+  mask-image:
+    linear-gradient(180deg, transparent, #000 9% 92%, transparent),
+    linear-gradient(90deg, transparent, #000 5% 95%, transparent);
+  mask-composite: intersect;
+}
+.lucky-project-picker .lpp-machine-title {
+  position: absolute;
+  left: 20%;
+  top: 16.5%;
+  width: 52%;
+  color: #ffe9b7;
+  font:
+    italic 400 clamp(15px, 3.6vw, 28px)/1 Georgia,
+    serif;
+  letter-spacing: 0.03em;
+  text-shadow:
+    0 2px 2px #3c0302,
+    0 0 16px #ffc76a50;
+  pointer-events: none;
+  z-index: 2;
+}
+.lucky-project-picker .lpp-reel {
+  position: absolute;
+  overflow: hidden;
+  z-index: 3;
+  border-radius: 15% / 7%;
+  background: #e7d9ad;
+  box-shadow: inset 0 0 5px #0009;
+  contain: layout paint;
+}
+.lucky-project-picker .lpp-reel::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 2;
+  background:
+    linear-gradient(90deg, #0008, transparent 15% 82%, #0008),
+    linear-gradient(
+      0deg,
+      #080a06e8 0%,
+      #161d1199 10%,
+      #716d4440 23%,
+      transparent 39%,
+      #fff9d61c 50%,
+      transparent 61%,
+      #4e502e40 78%,
+      #11180bb3 91%,
+      #070b06eb 100%
+    );
+  box-shadow: inset 0 1px 6px #000;
+}
+.lucky-project-picker .lpp-strip {
+  height: 100%;
+  width: 100%;
+  will-change: transform;
+  transform: translateY(0);
+}
+.lucky-project-picker .lpp-strip.lpp-moving {
+  filter: blur(2.1px);
+}
+.lucky-project-picker .lpp-symbol {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12%;
+  overflow: hidden;
+}
+.lucky-project-picker .lpp-logo {
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+  aspect-ratio: 1;
+  width: 100%;
+  max-width: 74px;
+  border-radius: 50%;
+  background: var(--lpp-project-color, #a62c26);
+  color: white;
+  font:
+    600 clamp(18px, 4vw, 36px)/1 Arial,
+    sans-serif;
+  box-shadow: 0 2px 6px #0003;
+  overflow: hidden;
+  position: relative;
+}
+.lucky-project-picker .lpp-logo img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  padding: 8%;
+  background: #fbf7ec;
+  object-fit: contain;
+}
+.lucky-project-picker .lpp-glass {
+  position: absolute;
+  pointer-events: none;
+  z-index: 4;
+  left: 22.1%;
+  top: 26.5%;
+  width: 47.7%;
+  height: 25.1%;
+  border-radius: 5%;
+  background: linear-gradient(115deg, #ffffff13 0%, #fff0 23%, #fff0 63%, #ffffff0c 66%, #fff0 69%);
+  box-shadow: inset 0 1px 1px #ffffff33;
+}
+.lucky-project-picker .lpp-knob {
+  position: absolute;
+  z-index: 5;
+  transform: translate(-50%, -50%);
+  min-width: 44px;
+  min-height: 44px;
+  border: 0;
+  border-radius: 50%;
+  background: transparent;
+  padding: 0;
+  box-shadow: none;
+}
+.lucky-project-picker .lpp-knob::after {
+  content: '';
+  position: absolute;
+  inset: 14%;
+  border-radius: 50%;
+  background: radial-gradient(ellipse, #fff5, transparent 70%);
+  opacity: 0;
+  transition: opacity 0.2s;
+}
+.lucky-project-picker .lpp-knob:hover::after {
+  opacity: 1;
+}
+.lucky-project-picker .lpp-lever-cover {
+  position: absolute;
+  left: 82%;
+  top: 17%;
+  width: 16%;
+  height: 43%;
+  z-index: 1;
+  background: linear-gradient(95deg, #010b07, #04150e 60%, #020e08);
+  border-radius: 30% 35% 10% 5%;
+  filter: blur(3px);
+  mask-image:
+    linear-gradient(90deg, transparent, #000 22% 88%, transparent),
+    linear-gradient(0deg, transparent, #000 5% 95%, transparent);
+  mask-composite: intersect;
+  pointer-events: none;
+}
+.lucky-project-picker .lpp-lever {
+  position: absolute;
+  z-index: 6;
+  padding: 0;
+  background: transparent;
+  border: 0;
+  border-radius: 30px;
+  min-width: 44px;
+}
+.lucky-project-picker .lpp-arm {
+  position: absolute;
+  left: 27%;
+  bottom: 0;
+  width: 12%;
+  height: 82%;
+  border-radius: 10px;
+  background: linear-gradient(90deg, #131916, #929b94 21%, #f5f7e7 44%, #687268 65%, #161c17);
+  box-shadow:
+    1px 0 2px #fff6,
+    -1px 0 1px #000;
+  transform-origin: 50% 100%;
+  transform: rotate(7deg);
+  pointer-events: none;
+}
+.lucky-project-picker .lpp-arm::before {
+  content: '';
+  position: absolute;
+  top: -9%;
+  left: 50%;
+  width: 490%;
+  aspect-ratio: 1;
+  transform: translateX(-50%);
+  border-radius: 50%;
+  background:
+    radial-gradient(ellipse at 68% 24%, #fff8ed 0 5%, #ffb0a2 8%, transparent 13%),
+    radial-gradient(circle at 37% 30%, #bf2218, #870a04 39%, #360100 74%, #0e0201);
+  box-shadow:
+    inset 3px 0 5px #ff8c5b25,
+    4px 8px 12px #000b;
+}
+.lucky-project-picker .lpp-lever.lpp-pulling .lpp-arm {
+  animation: lpp-lever-pull 0.65s cubic-bezier(0.3, 0.1, 0.3, 1);
+}
+.lucky-project-picker .lpp-flash {
+  position: absolute;
+  inset: 11% 17% 44% 12%;
+  z-index: 7;
+  pointer-events: none;
+  border-radius: 20%;
+  opacity: 0;
+  background: radial-gradient(ellipse, #ffe5ab7a, transparent 65%);
+  mix-blend-mode: screen;
+}
+.lucky-project-picker .lpp-machine.lpp-win .lpp-flash {
+  animation: lpp-win-glow 0.8s ease-out;
+}
+.lucky-project-picker .lpp-die {
+  position: absolute;
+  pointer-events: none;
+  z-index: 8;
+  filter: drop-shadow(0 12px 9px #0009);
+  animation: lpp-float 8s ease-in-out infinite;
+  width: var(--lpp-size, 20%);
+  left: var(--lpp-x);
+  top: var(--lpp-y);
+  transform: rotate(var(--lpp-tilt, 0deg));
+  animation-delay: var(--lpp-delay, 0s);
+}
+.lucky-project-picker .lpp-die img {
+  width: 100%;
+  height: auto;
+}
+.lucky-project-picker .lpp-result {
+  z-index: 9;
+  text-align: left;
+  transform-origin: 45.6% 0;
+  will-change: transform, opacity;
+  filter: drop-shadow(0 15px 22px #0008);
+  position: relative;
+  left: auto;
+  top: auto;
+  width: 100%;
+  transform: none;
+  grid-area: 1/1;
+}
+.lucky-project-picker .lpp-ticket {
+  padding: 24px;
+  background: linear-gradient(115deg, #fffaea, #e5dcc5);
+  color: #243328;
+  border-radius: 4px;
+  border-top: 4px solid #ba883c;
+  box-shadow: inset 0 0 0 1px #ffffff60;
+  position: relative;
+}
+.lucky-project-picker .lpp-ticket::before,
+.lucky-project-picker .lpp-ticket::after {
+  content: '';
+  position: absolute;
+  width: 12px;
+  height: 12px;
+  top: 71%;
+  border-radius: 50%;
+  background: #05100b;
+}
+.lucky-project-picker .lpp-ticket::before {
+  left: -6px;
+}
+.lucky-project-picker .lpp-ticket::after {
+  right: -6px;
+}
+.lucky-project-picker .lpp-card-head {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+.lucky-project-picker .lpp-card-head .lpp-logo {
+  width: 44px;
+  max-width: 44px;
+  font-size: 23px;
+}
+.lucky-project-picker .lpp-card-head h3 {
+  font:
+    400 clamp(18px, 4vw, 25px)/1.12 Georgia,
+    serif;
+  letter-spacing: -0.035em;
+  overflow-wrap: anywhere;
+}
+.lucky-project-picker .lpp-card-copy {
+  min-width: 0;
+  flex: 1;
+}
+.lucky-project-picker .lpp-card-label {
+  font:
+    9px/1.4 Arial,
+    sans-serif;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: #736346;
+  display: block;
+  margin-bottom: 4px;
+}
+.lucky-project-picker .lpp-description {
+  font:
+    12px/1.65 Arial,
+    sans-serif;
+  overflow-wrap: anywhere;
+  max-height: 100px;
+  overflow: auto;
+}
+.lucky-project-picker .lpp-card-bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  border-top: 1px dashed #ab9b744d;
+  margin-top: 17px;
+  padding-top: 14px;
+}
+.lucky-project-picker .lpp-demo {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  min-height: 44px;
+  text-decoration: none;
+  border-radius: 3px;
+  background: #203e2b;
+  color: #fff3d9;
+  padding: 10px 16px;
+  font:
+    600 11px/1.3 Arial,
+    sans-serif;
+}
+.lucky-project-picker .lpp-demo:focus-visible {
+  outline-color: #6b3b16;
+}
+.lucky-project-picker .lpp-ticket small {
+  font:
+    9px/1.5 Arial,
+    sans-serif;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  color: #77694b;
+}
+.lucky-project-picker .lpp-demo-empty {
+  font:
+    12px/1.5 Arial,
+    sans-serif;
+  color: #655e4c;
+}
+.lucky-project-picker .lpp-idle {
+  display: grid;
+  gap: 15px;
+  position: relative;
+  left: auto;
+  top: auto;
+  width: 100%;
+  min-height: 220px;
+  border: 1px dashed #d7bb7c45;
+  border-radius: 5px;
+  align-content: center;
+  justify-items: start;
+  grid-area: 1/1;
+  padding: 28px;
+}
+.lucky-project-picker .lpp-idle p {
+  font:
+    13px/1.6 Arial,
+    sans-serif;
+  color: #b7bda9;
+  max-width: 290px;
+}
+.lucky-project-picker .lpp-spin-link {
+  min-height: 44px;
+  padding: 10px 23px;
+  border: 1px solid #b9a77977;
+  border-radius: 30px;
+  background: linear-gradient(115deg, #293a2d, #0f2118);
+  font:
+    11px/1.4 Arial,
+    sans-serif;
+  letter-spacing: 0.06em;
+}
+.lucky-project-picker .lpp-status {
+  font:
+    12px/1.6 Arial,
+    sans-serif;
+  color: #c6ccb7;
+  max-width: 520px;
+  margin: 15px 0 0;
+  min-height: 58px;
+  text-wrap: initial;
+}
+.lucky-project-picker .lpp-sr {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+  border: 0;
+}
+@keyframes lpp-float {
+  0%,
+  100% {
+    transform: translateY(0) rotate(var(--lpp-tilt, 0deg));
+  }
+  50% {
+    transform: translateY(-12px) rotate(calc(var(--lpp-tilt, 0deg) + 7deg));
+  }
+}
+@keyframes lpp-lever-pull {
+  0%,
+  100% {
+    transform: rotate(7deg) scaleY(1);
+  }
+  45% {
+    transform: rotate(30deg) scaleY(0.76);
+  }
+  80% {
+    transform: rotate(4deg) scaleY(1.02);
+  }
+}
+@keyframes lpp-win-glow {
+  0% {
+    opacity: 0;
+  }
+  28% {
+    opacity: 0.9;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+@media (max-width: 480px) {
+  .lucky-project-picker {
+    padding: 28px 12px 38px;
+  }
+  .lucky-project-picker .lpp-topline {
+    margin-bottom: 25px;
+    font-size: 8px;
+  }
+  .lucky-project-picker .lpp-subtitle {
+    font-size: 12px;
+    max-width: 270px;
+  }
+  .lucky-project-picker .lpp-machine-title {
+    font-size: 17px;
+  }
+  .lucky-project-picker .lpp-ticket {
+    padding: 19px;
+  }
+  .lucky-project-picker .lpp-shelf {
+    gap: 12px;
+  }
+  .lucky-project-picker .lpp-slot {
+    width: 50px;
+    height: 50px;
+  }
+  .lucky-project-picker .lpp-collection-top {
+    font-size: 9px;
+  }
+  .lucky-project-picker .lpp-die {
+    max-width: 20%;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .lucky-project-picker *,
+  .lucky-project-picker *::before,
+  .lucky-project-picker *::after {
+    animation: none !important;
+    transition: none !important;
+    scroll-behavior: auto !important;
+  }
+  .lucky-project-picker .lpp-strip.lpp-moving {
+    filter: none;
+  }
+  .lucky-project-picker .lpp-flash {
+    display: none;
+  }
+}
+
+.lucky-project-picker .lpp-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
+  align-items: center;
+  gap: 44px;
+  max-width: 1100px;
+  margin: auto;
+}
+.lucky-project-picker .lpp-panel {
+  text-align: left;
+  min-width: 0;
+  padding: 24px 0;
+}
+.lucky-project-picker .lpp-card-space {
+  display: grid;
+  align-items: center;
+  min-height: 255px;
+  margin: 24px 0;
+}
+@media (max-width: 740px) {
+  .lucky-project-picker .lpp-layout {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+  .lucky-project-picker .lpp-stage {
+    max-width: 430px;
+    padding: 0;
+  }
+  .lucky-project-picker .lpp-panel {
+    padding: 8px 8px 0;
+  }
+  .lucky-project-picker .lpp-title {
+    font-size: 44px;
+  }
+  .lucky-project-picker .lpp-card-space {
+    min-height: 230px;
+    margin: 20px 0;
+  }
+  .lucky-project-picker .lpp-result {
+    left: auto;
+    width: 100%;
+  }
+  .lucky-project-picker .lpp-stage::after {
+    bottom: 0;
+  }
+}

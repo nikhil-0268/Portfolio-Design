@@ -1,0 +1,89 @@
+/* ==========================================================================
+   Optional hand-drawn guitar cursor (desktop pointer devices only).
+   The switch sits in the bottom-left corner, clear of the header, the in-scene
+   links, and the floating navigation.
+   ========================================================================== */
+.guitar-cursor {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 38px;
+  height: 38px;
+  z-index: 2147483647;
+  pointer-events: none;
+  display: none;
+  will-change: transform;
+}
+.guitar-cursor img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  pointer-events: none;
+}
+/* The actual click point, so the artwork does not hide where you are aiming. */
+.guitar-cursor::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 3px;
+  height: 3px;
+  background: #151512;
+  outline: 1px solid #faf5e9;
+  border-radius: 50%;
+}
+@media (hover: hover) and (pointer: fine) {
+  html.guitar-cursor-active,
+  html.guitar-cursor-active * {
+    cursor: none !important;
+  }
+  .guitar-cursor-active .guitar-cursor {
+    display: block;
+  }
+}
+/* Recessed in the bottom-left corner, clear of the header, the in-scene links
+   and the floating navigation. */
+.cursor-choice {
+  position: fixed;
+  bottom: 22px;
+  left: 24px;
+  z-index: 30;
+  padding: 9px 12px;
+  border: 1px solid #8d877659;
+  border-radius: 30px;
+  background: #eee8d9f2;
+  color: #24231f;
+  font:
+    9px/1.2 Arial,
+    Helvetica,
+    sans-serif;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  cursor: pointer;
+  opacity: 0.7;
+  transition:
+    opacity 0.25s,
+    background 0.25s;
+}
+.cursor-choice:hover {
+  opacity: 1;
+  background: #fffaf0;
+}
+.cursor-choice:focus-visible {
+  outline: 2px solid #7b805b;
+  outline-offset: 3px;
+  opacity: 1;
+}
+@media (hover: none), (pointer: coarse) {
+  .guitar-cursor,
+  .cursor-choice {
+    display: none !important;
+  }
+}
+/* Narrow windows cannot fit the switch beside the floating navigation. */
+@media (max-width: 700px) {
+  .cursor-choice {
+    display: none !important;
+  }
+}

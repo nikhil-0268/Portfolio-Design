@@ -1,0 +1,7 @@
+Mode: built-in image_gen. Both outputs use transparent_background=true.
+
+DICE — source: download (3).jpg
+Background extraction edit. Use the supplied red glass dice photo as the edit target. Extract JUST the large upper-left red glass die as one individual cutout, preserving its exact angle, red translucent material, white ivory pips, reflections and shape. Remove all the other dice and the entire white background. Center the single die in a square canvas, tightly framed with 8% transparent padding. Actual transparent background with clean alpha; no white matte, no added shadow or text. This is a website decoration asset.
+
+BADGE — source: download (4).jpg
+Background extraction edit. Supplied black-and-white JACKPOT slot machine drawing on vivid green is the edit target. Remove only the green backdrop to actual transparency. Preserve the exact black and white machine artwork and JACKPOT text, lever, borders, and internal white surfaces. Center the complete machine as a small web badge with 6% transparent margin, no new objects or embellishments.

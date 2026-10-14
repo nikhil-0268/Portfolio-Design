@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f2f0eb">
+  <title>Your Name — Portfolio Preview</title>
+  <link rel="stylesheet" href="demo.css">
+  <script src="demo.js" defer></script>
+</head>
+<body>
+  <header class="topbar" id="top">
+    <a class="wordmark" href="#top" aria-label="Your portfolio home"><span class="mark">✳</span> YOUR PORTFOLIO</a>
+    <span class="topnote">A LITTLE SPACE FOR WHAT I MAKE</span>
+    <a class="menu-link" href="#contact">SAY HELLO <span aria-hidden="true">↗</span></a>
+  </header>
+
+  <main>
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="hero-copy">
+        <p class="eyebrow"><span class="status-dot"></span> PERSONAL PORTFOLIO · INTRO</p>
+        <h1 id="hero-title"><span>YOUR</span><span>NAME<span class="period">.</span></span></h1>
+        <p class="intro">Hi, I’m <strong>[Your Name]</strong> — a <strong>[student / aspiring creative]</strong> who enjoys learning, experimenting, and turning ideas into things people can use.</p>
+        <div class="tags" aria-label="Example interests; replace these with yours">
+          <span>CURIOUS BY NATURE</span><span>ALWAYS LEARNING</span><span>MADE WITH CARE</span>
+        </div>
+        <a class="scroll-link" href="#work"><span class="scroll-line"></span> SCROLL TO EXPLORE <span aria-hidden="true">↓</span></a>
+      </div>
+
+      <div class="portrait-area">
+        <figure class="portrait-wrap" id="portrait-wrap">
+          <button class="portrait-trigger" id="portrait-trigger" type="button" aria-label="Tap to reveal the portrait stickers" aria-pressed="false">
+            <img class="portrait" src="portrait.jpg" alt="Portrait photo for the portfolio introduction">
+          </button>
+          <span class="photo-note">A FACE TO THE NAME <span aria-hidden="true">↙</span></span>
+          <span class="sticker sticker-camera" aria-hidden="true"><span class="sticker-emoji">📸</span><span>little moments</span></span>
+          <span class="sticker sticker-music" aria-hidden="true"><span class="sticker-emoji">♫</span><span>good sounds</span></span>
+          <span class="sticker sticker-chill" aria-hidden="true">JUST<br>CHILL.</span>
+          <span class="sticker sticker-spark" aria-hidden="true">✦<small>keep going</small></span>
+          <span class="sticker sticker-idea" aria-hidden="true"><span class="sticker-emoji">💡</span><span>one more idea</span></span>
+        </figure>
+        <p class="hover-hint"><span class="hint-desktop">HOVER OVER THE PHOTO</span><span class="hint-touch">TAP THE PHOTO</span> <span aria-hidden="true">↗</span></p>
+      </div>
+    </section>
+
+    <section class="work-section" id="work" aria-labelledby="work-title">
+      <div class="section-top"><span>01 / THE WORK</span><span>SCROLL TO SEE WHAT'S NEXT</span></div>
+      <div class="work-heading">
+        <p class="eyebrow light-eyebrow">A FEW THINGS IN THE MAKING</p>
+        <h2 id="work-title">SMALL STEPS.<br><span>GOOD IDEAS.</span></h2>
+        <p class="work-intro">This is where your projects can live. The cards below are only examples of the layout; we can replace them with your real work when you’re ready.</p>
+      </div>
+      <div class="project-stack">
+        <article class="project-card card-desk" style="--card-index:0">
+          <div class="card-meta"><span>01 — PERSONAL PROJECT</span><span>WEB EXPERIENCE</span></div>
+          <div class="card-bottom"><div><p class="card-kicker">A PLACE TO BEGIN</p><h3>The desk<br>becomes a doorway.</h3></div><span class="card-arrow" aria-hidden="true">↗</span></div>
+          <div class="card-art art-desk" aria-hidden="true"><span>YOUR<br>WORK<br>HERE</span><i>✳</i></div>
+        </article>
+        <article class="project-card card-study" style="--card-index:1">
+          <div class="card-meta"><span>02 — YOUR NEXT PROJECT</span><span>CASE STUDY</span></div>
+          <div class="card-bottom"><div><p class="card-kicker">A PROBLEM YOU SOLVED</p><h3>Show the idea.<br>Tell the story.</h3></div><span class="card-arrow" aria-hidden="true">↗</span></div>
+          <div class="card-art art-study" aria-hidden="true"><span>IDEA<br>→<br>MADE</span><i>○</i></div>
+        </article>
+        <article class="project-card card-play" style="--card-index:2">
+          <div class="card-meta"><span>03 — SOMETHING YOU LOVE</span><span>CREATIVE PLAY</span></div>
+          <div class="card-bottom"><div><p class="card-kicker">MAKE ROOM TO EXPLORE</p><h3>A little curiosity<br>goes a long way.</h3></div><span class="card-arrow" aria-hidden="true">↗</span></div>
+          <div class="card-art art-play" aria-hidden="true"><span>JUST<br>MAKE<br>IT.</span><i>✷</i></div>
+        </article>
+      </div>
+    </section>
+
+    <section class="about-section" id="about">
+      <div class="section-top"><span>02 / A LITTLE ABOUT ME</span><span>STILL FIGURING IT OUT, IN A GOOD WAY</span></div>
+      <div class="about-grid"><p class="eyebrow">MORE THAN THE PROJECTS</p><div><h2>Curious about how things work.<br><span>Excited to make my own.</span></h2><p class="about-copy">Add a few personal details here: what you enjoy learning, what inspires you, and what you hope to make next. A couple of honest sentences are plenty.</p></div></div>
+    </section>
+
+    <footer class="contact-section" id="contact"><span>HAVE A GOOD ONE.</span><a href="#top">BACK TO THE TOP ↑</a><small>YOUR NAME · PORTFOLIO PREVIEW</small></footer>
+  </main>
+
+  <nav class="floating-nav" aria-label="Page navigation">
+    <a href="#work">WORK</a><a href="#about">ABOUT</a><a class="nav-contact" href="#contact"><span>LET’S TALK</span><span aria-hidden="true">↗</span></a>
+  </nav>
+</body>
+</html>

@@ -1,0 +1,174 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="From above the desk to a seat at the workspace. Scroll down to enter Nikhil Sharma's portfolio."
+    />
+    <meta name="author" content="Nikhil Sharma" />
+    <meta name="theme-color" content="#211c17" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Take a seat · Nikhil Sharma" />
+    <meta
+      property="og:description"
+      content="Scroll from above the desk down to the laptop, then step into the portfolio."
+    />
+    <meta property="og:image" content="assets/desk-front.webp" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <title>Take a seat · Nikhil Sharma</title>
+
+    <link rel="icon" href="favicon.ico" sizes="48x48" />
+    <link rel="icon" type="image/png" href="assets/favicon-64.png" sizes="64x64" />
+    <link rel="apple-touch-icon" href="assets/apple-touch-icon.png" />
+
+    <link
+      rel="preload"
+      as="image"
+      href="assets/desk-overhead.webp"
+      type="image/webp"
+      fetchpriority="high"
+    />
+    <link rel="preload" as="image" href="assets/desk-front.webp" type="image/webp" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="cursor.css" />
+    <script src="camera-mesh.js" defer></script>
+    <script src="camera-renderer.js" defer></script>
+    <script src="script.js" defer></script>
+    <script src="cursor.js" defer></script>
+  </head>
+  <body>
+    <main class="journey" aria-label="Descend into my workspace">
+      <div class="scene-window">
+        <div class="camera-stage" aria-hidden="true">
+          <picture class="view overhead-view">
+            <source
+              type="image/webp"
+              srcset="assets/desk-overhead.webp 1672w, assets/desk-overhead-2x.webp 2508w"
+              sizes="100vw"
+            />
+            <img
+              src="desk-overhead-v3.png"
+              alt=""
+              width="1672"
+              height="941"
+              fetchpriority="high"
+              decoding="async"
+            />
+          </picture>
+          <picture class="view middle-view">
+            <source
+              type="image/webp"
+              srcset="assets/desk-mid.webp 1672w, assets/desk-mid-2x.webp 2508w"
+              sizes="100vw"
+            />
+            <img
+              src="desk-mid-v3.png"
+              alt=""
+              width="1672"
+              height="941"
+              loading="lazy"
+              decoding="async"
+            />
+          </picture>
+          <picture class="view front-view">
+            <source
+              type="image/webp"
+              srcset="assets/desk-front.webp 1672w, assets/desk-front-2x.webp 2508w"
+              sizes="100vw"
+            />
+            <img
+              src="desk-front-v5.png"
+              alt=""
+              width="1672"
+              height="941"
+              loading="lazy"
+              decoding="async"
+            />
+          </picture>
+          <canvas class="camera-canvas"></canvas>
+        </div>
+
+        <div class="screen-stage" id="laptop">
+          <div class="laptop-screen">
+            <!-- The laptop is the doorway into the portfolio. -->
+            <a class="portfolio-door" href="page2.html" aria-label="Enter my portfolio">
+              <span class="screen-copy">
+                <span class="welcome">Welcome.</span>
+                <span class="enter-button"
+                  >Enter portfolio <span class="arrow" aria-hidden="true">↗</span></span
+                >
+              </span>
+            </a>
+          </div>
+        </div>
+
+        <a class="skip-view" href="#laptop">Go to laptop <span aria-hidden="true">↓</span></a>
+        <a class="skip-scroll" href="#laptop">Skip the scroll <span aria-hidden="true">↘</span></a>
+
+        <div class="scroll-cue">
+          <a class="cue-label" href="#laptop">Take a seat.</a>
+          <span class="cue-instruction"
+            >Scroll to come closer <span aria-hidden="true">↓</span></span
+          >
+        </div>
+
+        <div class="scroll-progress" aria-hidden="true"><span></span></div>
+      </div>
+    </main>
+    <noscript>
+      <style>
+        /* No JavaScript: show the whole desk, hide the camera machinery, and give the
+     portfolio a plain link, since the laptop door needs JS to become reachable. */
+        .camera-stage {
+          position: relative;
+          left: auto;
+          top: auto;
+          transform: none;
+          width: 100%;
+          height: auto;
+        }
+        .view {
+          position: relative;
+          visibility: visible;
+          height: auto;
+          aspect-ratio: 1672/941;
+        }
+        .screen-stage,
+        .skip-view,
+        .skip-scroll,
+        .scroll-cue,
+        .scroll-progress {
+          display: none;
+        }
+        .scene-window {
+          height: auto;
+          min-height: 0;
+        }
+        .noscript-door {
+          position: absolute;
+          left: 50%;
+          bottom: 7%;
+          transform: translateX(-50%);
+          padding: 16px 26px;
+          border: 1px solid #f4e8cf59;
+          border-radius: 30px;
+          background: #1a1719d9;
+          color: #fff7e8;
+          text-decoration: none;
+          font:
+            11px/1 Arial,
+            Helvetica,
+            sans-serif;
+          letter-spacing: 0.14em;
+          text-transform: uppercase;
+        }
+        .noscript-door:hover {
+          background: #1a1719;
+        }
+      </style>
+      <a class="noscript-door" href="page2.html">Enter portfolio →</a>
+    </noscript>
+  </body>
+</html>

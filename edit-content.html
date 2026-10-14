@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en"
+  ><head
+    ><meta charset="utf-8" /><meta
+      name="viewport"
+      content="width=device-width,initial-scale=1" /><meta name="robots" content="noindex" /><title
+      >Edit your portfolio</title
+    ><link rel="stylesheet" href="editor.css" /><script src="site-config.js" defer></script
+    ><script src="projects-data.js" defer></script
+    ><script src="content.js" defer></script
+    ><script src="editor.js" defer></script></head
+  ><body>
+    <header
+      ><a href="page2.html">← Your portfolio</a><span>CONTENT STUDIO / NIKHIL SHARMA</span></header
+    ><main
+      ><h1>Make it yours.</h1
+      ><p class="lede"
+        >Update your introduction, projects, and the circular gallery. Preview your changes, then
+        export <strong>content.js</strong> and replace the file with the same name in your portfolio
+        folder.</p
+      ><p class="note"
+        >This editor runs in your browser. Previewing saves a local draft; exporting downloads a
+        file. Your website changes only when you replace content.js.</p
+      >
+      <form id="editor-form"
+        ><section
+          ><h2>01 / You</h2
+          ><div class="grid"
+            ><label>Your name<input name="name" required /></label
+            ><label
+              >Portrait image path<input
+                name="portrait"
+                placeholder="nikhil-portrait-tight.png" /></label></div
+          ><label>Short introduction<textarea name="intro" rows="3"></textarea></label
+          ><label
+            >Tags, separated by commas<input
+              name="tags"
+              placeholder="Curious by nature, Always learning" /></label
+          ><label>About heading<input name="aboutHeading" /></label
+          ><label>About you<textarea name="about" rows="5"></textarea></label
+        ></section>
+        <section
+          ><h2>02 / Your projects</h2
+          ><p
+            >Each project gets a sliding cover and its own detail page. Use real titles and
+            descriptions. Put images in <strong>project-images/</strong> and enter the path, for
+            example <strong>project-images/my-app.png</strong>. URLs to hosted images also work.</p
+          ><div id="project-fields"></div
+          ><button type="button" id="add-project">+ Add a project</button></section
+        >
+        <section
+          ><h2>03 / The circular gallery</h2
+          ><p
+            >Use these tiles for your interests, small experiments, photos, or anything you choose
+            later.</p
+          ><label>Section heading<input name="orbitTitle" /></label><div id="orbit-fields"></div
+          ><button type="button" id="add-orbit">+ Add a tile</button></section
+        >
+        <section
+          ><h2>04 / Contact</h2
+          ><label
+            >Email address<input type="email" name="email" placeholder="you@example.com" /></label
+          ><p>Leave empty fields blank to hide them on the website.</p><div id="link-fields"></div
+          ><button type="button" id="add-link">+ Add a link</button></section
+        >
+        <div class="editor-actions"
+          ><button type="button" id="preview">Preview draft ↗</button
+          ><button type="submit" class="primary">Export content.js ↓</button
+          ><button type="button" id="restore">Restore local draft</button
+          ><label class="import-label"
+            >Import content.js<input
+              id="import-content"
+              type="file"
+              accept=".js"
+              hidden /></label></div
+        ><p id="editor-status" role="status" aria-live="polite"></p></form></main></body
+></html>
